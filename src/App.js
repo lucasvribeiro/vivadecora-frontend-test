@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+// import Header from "./components/Header/Header";
+// import SideMenu from "./components/SideMenu/SideMenu";
+
+import menuIcon from "./assets/menu-lateral.png";
+import vivaDecoraLogo from "./assets/logo-viva-decora.png";
+
+import "./App.css";
 
 function App() {
+  const [menuState, setMenuState] = useState(false);
+
+  const changeMenuState = () => {
+    setMenuState(!menuState);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div>
+      <div className="menu">
+        <div
+          className={
+            menuState ? "side-menu-items" : "side-menu-items closed-side-menu"
+          }
         >
-          Learn React
-        </a>
-      </header>
+          <a href="a">FILMES NÃO CURADOS</a>
+          <a href="b">FILMES CURTIDOS</a>
+          <a href="c"> FILMES NÃO CURTIDOS</a>
+        </div>
+
+        <div className="header">
+          <div className={menuState ? "header-icon" : "header-icon closed"}>
+            <img onClick={changeMenuState} src={menuIcon} alt="Menu" />
+          </div>
+
+          <div className="header-logo">
+            <img src={vivaDecoraLogo} alt="Logo" />
+          </div>
+        </div>
+      </div>
+
+      <div className={menuState ? "page-content" : "page-content closed"}>
+        <div>Content</div>
+      </div>
     </div>
   );
 }
