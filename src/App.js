@@ -1,47 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 // import Header from "./components/Header/Header";
 // import SideMenu from "./components/SideMenu/SideMenu";
 
-import menuIcon from "./assets/menu-lateral.png";
-import vivaDecoraLogo from "./assets/logo-viva-decora.png";
+// import menuIcon from "./assets/menu-lateral.png";
+// import vivaDecoraLogo from "./assets/logo-viva-decora.png";
 
 import "./App.css";
+import Card from "./components/Card/Card";
 
 function App() {
-  const [menuState, setMenuState] = useState(false);
+  // const [menuState, setMenuState] = useState(false);
+  const [movies, setMovies] = useState(undefined);
 
-  const changeMenuState = () => {
-    setMenuState(!menuState);
-  };
+  // const changeMenuState = () => {
+  //   setMenuState(!menuState);
+  // };
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.themoviedb.org/4/list/1?api_key=bc34944b565b8fb060d355016adeef9b"
+      )
+      .then((res) => {
+        // console.log(res.data.results[0]);
+        setMovies(res.data.results);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
-    <div>
-      <div className="menu">
-        <div
-          className={
-            menuState ? "side-menu-items" : "side-menu-items closed-side-menu"
-          }
-        >
-          <a href="a">FILMES NÃO CURADOS</a>
-          <a href="b">FILMES CURTIDOS</a>
-          <a href="c"> FILMES NÃO CURTIDOS</a>
-        </div>
-
-        <div className="header">
-          <div className={menuState ? "header-icon" : "header-icon closed"}>
-            <img onClick={changeMenuState} src={menuIcon} alt="Menu" />
-          </div>
-
-          <div className="header-logo">
-            <img src={vivaDecoraLogo} alt="Logo" />
-          </div>
-        </div>
-      </div>
-
-      <div className={menuState ? "page-content" : "page-content closed"}>
-        <div>Content</div>
-      </div>
+    <div className="app">
+      <Card size="small" movies={movies ? movies[0] : undefined} />
+      <div>teste</div>
+      <Card size="big" movies={movies ? movies[5] : undefined} />
     </div>
   );
 }

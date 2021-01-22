@@ -1,0 +1,146 @@
+/* Card in general */
+
+.card {
+  border-radius: 5px;
+  color: #fff;
+  position: relative;
+}
+
+.container {
+  z-index: 1;
+}
+
+.card-sinopse {
+  z-index: 1;
+}
+
+.layer {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.15), rgba(97, 97, 97, 0.8));
+  border-radius: 5px;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 500px) {
+}
+
+.card-title {
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.card-rating {
+  padding-bottom: 5px;
+}
+
+.card-rating img {
+  padding: 0 5px 0 0;
+}
+
+/* Big card */
+
+.card-big {
+  width: 700px;
+  height: 460px;
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.container-big {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 15px 0;
+}
+
+.card-title-big {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 500px) {
+  .card-big {
+    width: 294px !important;
+    height: 350px !important;
+    padding: 20px !important;
+  }
+
+  .container-big {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .container-rating-big {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .card-title-big {
+    font-size: 1rem !important;
+  }
+
+  .card-info-big {
+    display: none;
+  }
+}
+
+/* Small card */
+
+.card-small {
+  width: 294px;
+  height: 350px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card-info-small {
+  display: none;
+}
+
+.container-small {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px 0;
+}
+
+.container-rating-small {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card-title-small {
+  font-size: 1.35rem;
+}
+
+@media screen and (max-width: 500px) {
+  .card-small {
+    width: 145px !important;
+    height: 174px !important;
+    padding: 10px !important;
+  }
+
+  .card-title-small {
+    font-size: 1rem;
+  }
+
+  .card-sinopse-small {
+    display: none;
+  }
+
+  .card-number-ratings-small {
+    display: none;
+  }
+}
