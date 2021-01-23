@@ -1,0 +1,38 @@
+.header {
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.hamburguer-container {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburguer-menu {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 500px) {
+  .hamburguer-menu {
+    display: none;
+  }
+
+  .logo-container {
+    width: 100% !important;
+  }
+
+  .hamburguer-container {
+    width: 0% !important;
+  }
+}

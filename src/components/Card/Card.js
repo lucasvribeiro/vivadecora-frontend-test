@@ -123,7 +123,7 @@ const Card = (props) => {
             {movies.overview}
           </ShowMoreText>
         </div>
-        <div class="layer"></div>
+        <div className="layer"></div>
       </div>
     );
   }
