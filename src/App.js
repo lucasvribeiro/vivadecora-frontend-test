@@ -1,55 +1,75 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-// import Header from "./components/Header/Header";
-// import SideMenu from "./components/SideMenu/SideMenu";
+import menuIcon from "./assets/menu-lateral.png";
+import vivaDecoraLogo from "./assets/logo-viva-decora.png";
 
-// import menuIcon from "./assets/menu-lateral.png";
-// import vivaDecoraLogo from "./assets/logo-viva-decora.png";
-
-import like from "./assets/curti.png";
-import deslike from "./assets/n-curti.png";
+import Home from "./pages/Home/Home";
+import LikedMovies from "./pages/LikedMovies/LikedMovies";
+import DeslikedMovies from "./pages/DeslikedMovies/DeslikedMovies";
 
 import "./App.css";
-import Card from "./components/Card/Card";
-import Button from "./components/Button/Button";
 
 function App() {
-  // const [menuState, setMenuState] = useState(false);
-  const [movies, setMovies] = useState(undefined);
+  const [menuState, setMenuState] = useState(false);
 
-  // const changeMenuState = () => {
-  //   setMenuState(!menuState);
-  // };
-
-  useEffect(() => {
-    axios
-      .get(
-        "https://api.themoviedb.org/4/list/1?api_key=bc34944b565b8fb060d355016adeef9b"
-      )
-      .then((res) => {
-        // console.log(res.data.results[0]);
-        setMovies(res.data.results);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  const changeMenuState = () => {
+    setMenuState(!menuState);
+  };
 
   return (
-    <div className="app">
-      <Card size="small" movies={movies ? movies[0] : undefined} />
-      <div>teste</div>
-      <Card size="big" movies={movies ? movies[5] : undefined} />
-      <div>teste</div>
-      <div>teste</div>
+    //   <Router>
+    //         <Link to="/">Home</Link>
+    //         <Link to="/about">About</Link>
+    //         <Link to="/dashboard">Dashboard</Link>
 
-      <div className="buttons">
-        <Button icon={deslike} text="Não Curti!" color="#555555" width="240px" />
-        <Button onlyText={true} text="Pular" color="#555555" width="120px" />
-        <Button icon={like} text="Curti!" color="#FF5656" width="240px" />
+    // </Router>
+    <Router>
+      <div className="app">
+        <div
+          className={
+            menuState
+              ? "sections-mobile"
+              : "sections-mobile sections-mobile-closed"
+          }
+        >
+          <Link onClick={changeMenuState} to="/">FILMES NÃO CURADOS</Link>
+          <Link onClick={changeMenuState} to="/desliked-movies">FILMES CURTIDOS</Link>
+          <Link onClick={changeMenuState} to="/liked-movies">FILMES NÃO CURTIDOS</Link>
+        </div>
+
+        <div className="body-content">
+          <div className="header">
+            <div className="hamburguer-container">
+              <img
+                src={menuIcon}
+                onClick={changeMenuState}
+                className="hamburguer-menu"
+                alt="Toggle"
+              />
+            </div>
+
+            <div className="logo-container">
+              <img src={vivaDecoraLogo} alt="Toggle" />
+            </div>
+          </div>
+
+          <div className="sections-web">
+            <Link to="/">FILMES NÃO CURADOS</Link>
+            <Link to="/desliked-movies">FILMES CURTIDOS</Link>
+            <Link to="/liked-movies">FILMES NÃO CURTIDOS</Link>
+          </div>
+
+          <Switch>
+            <Route path="/home" exact component={Home} />
+            <Route path="/desliked-movies" exact component={DeslikedMovies} />
+            <Route path="/liked-movies" exact component={LikedMovies} />
+
+            <Route path="/*" component={Home} />
+          </Switch>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
