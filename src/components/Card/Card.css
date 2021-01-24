@@ -46,7 +46,7 @@
 .card-big {
   width: 700px;
   height: 460px;
-  padding: 40px;
+  /* padding: 40px; */
 
   display: flex;
   flex-direction: column;
@@ -68,7 +68,7 @@
   .card-big {
     width: 294px !important;
     height: 350px !important;
-    padding: 20px !important;
+    /* padding: 20px !important; */
   }
 
   .container-big {
@@ -96,7 +96,7 @@
 .card-small {
   width: 294px;
   height: 350px;
-  padding: 20px;
+  /* padding: 20px; */
 
   display: flex;
   flex-direction: column;
@@ -129,7 +129,7 @@
   .card-small {
     width: 145px !important;
     height: 174px !important;
-    padding: 10px !important;
+    /* padding: 10px !important; */
   }
 
   .card-title-small {

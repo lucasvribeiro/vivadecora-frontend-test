@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 
 import Card from "../../components/Card/Card";
 import Button from "../../components/Button/Button";
@@ -9,37 +8,54 @@ import "./Home.css";
 import like from "../../assets/curti.png";
 import deslike from "../../assets/n-curti.png";
 
-const Home = () => {
-  const [movies, setMovies] = useState(undefined);
+const Home = (props) => {
+  const handleLikedMovie = () => {
+    props.sendLikeMovie();
+  };
+
+  const handleDeslikedMovie = () => {
+    props.sendDeslikeMovie();
+  };
+
+  const handleSkippedMovie = () => {
+    props.sendSkipMovie();
+  };
 
   useEffect(() => {
-    axios
-      .get(
-        "https://api.themoviedb.org/4/list/1?api_key=bc34944b565b8fb060d355016adeef9b"
-      )
-      .then((res) => {
-        setMovies(res.data.results);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    console.log("rendered");
   }, []);
 
   return (
     <div className="home">
       <div className="main-card">
-        <Card size="big" movies={movies ? movies[5] : undefined} />
+        <Card
+          size="big"
+          movie={props.movie ? props.movie : undefined}
+        />
       </div>
 
       <div className="buttons">
         <Button
+          onButtonClick={handleDeslikedMovie}
           icon={deslike}
-          text="Não Curti!"
+          text="NÃO CURTI"
           color="#555555"
           width="240px"
         />
-        <Button onlyText={true} text="Pular" color="#555555" width="120px" />
-        <Button icon={like} text="Curti!" color="#FF5656" width="240px" />
+        <Button
+          onButtonClick={handleSkippedMovie}
+          onlyText={true}
+          text="PULAR"
+          color="#555555"
+          width="120px"
+        />
+        <Button
+          onButtonClick={handleLikedMovie}
+          icon={like}
+          text="CURTI"
+          color="#FF5656"
+          width="240px"
+        />
       </div>
     </div>
   );

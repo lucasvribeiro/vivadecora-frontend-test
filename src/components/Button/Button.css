@@ -6,7 +6,7 @@
   border-radius: 100px;
   border: none;
   cursor: pointer;
-  margin: 0 2vw;
+  margin: 0 1vw;
 }
 
 .button-component:focus {
@@ -29,13 +29,16 @@
 }
 
 @media screen and (max-width: 500px) {
+  .button-component {
+    margin: 0 2vw !important;
+  }
   .only-text {
     width: 100px !important;
     height: 65px;
   }
 
   .only-text p {
-    font-size: 1.2rem !important;
+    font-size: 1.15rem !important;
     padding: 0 10px !important;
     margin: 0 !important;
   }

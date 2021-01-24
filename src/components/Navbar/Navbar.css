@@ -1,3 +1,7 @@
+.navbar {
+  z-index: 5;
+}
+
 .sections-mobile {
   background-color: #333333;
   height: 100vh;
@@ -8,13 +12,12 @@
   justify-content: center;
 }
 
-.sections-web a,
 .sections-mobile a {
   margin: 10px 0 10px 30px;
   text-decoration: none;
   color: #dddddd;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .sections-mobile-closed {
@@ -33,7 +36,27 @@
   .sections-web {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100px;
+    min-height: 80px;
+  }
+
+  .sections-web a {
+    margin: 10px 20px 10px 20px !important;
+    text-decoration: none;
+    font-size: 1rem !important;
+    color: #dddddd;
+    font-weight: normal;
+  }
+
+  .selected-link {
+    font-weight: bold !important;
+    color: #ffffff !important;
+  }
+
+  .selected-link::after {
+    content: "";
+    background-color: #ffffff;
+    width: 100%;
+    height: 4px;
+    display: block;
   }
 }

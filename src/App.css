@@ -1,24 +1,31 @@
 .app {
   display: flex;
+  align-items: stretch;
+  position: relative;
   height: fit-content;
-  width: 100vw;
-  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .body-content {
+  z-index: 5;
   display: flex;
   flex-direction: column;
-  width: 100%;
   align-items: center;
-  margin: 20px 10px;
 }
 
 @media screen and (min-width: 500px) {
   .app {
     flex-direction: column;
   }
+}
 
-  .body-content {
-    margin: 20px 0;
-  }
+.layer-background {
+  opacity: 0.9;
+  background-image: linear-gradient(to left, #ff1919, #ff5656);
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

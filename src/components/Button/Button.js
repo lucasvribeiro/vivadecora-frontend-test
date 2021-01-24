@@ -3,8 +3,13 @@ import React from "react";
 import "./Button.css";
 
 const Button = (props) => {
+  const handleClick = () => {
+    props.onButtonClick();
+  }
+
   return (
     <button
+      onClick={handleClick}
       className={
         props.onlyText
           ? "button-component only-text"

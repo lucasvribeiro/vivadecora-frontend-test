@@ -1,6 +1,7 @@
 .header {
-  width: 100%;
-  min-height: 60px;
+  width: calc(100vw - 20px);
+  min-height: 90px;
+  margin: 0 10px;
   display: flex;
   align-items: center;
 }
@@ -19,6 +20,10 @@
   justify-content: center;
 }
 
+.logo-container img {
+  margin-left: -10%;
+}
+
 .hamburguer-menu {
   cursor: pointer;
 }
@@ -31,6 +36,11 @@
   .logo-container {
     width: 100% !important;
   }
+
+  .logo-container img {
+    margin-left: 0 !important;
+  }
+  
 
   .hamburguer-container {
     width: 0% !important;

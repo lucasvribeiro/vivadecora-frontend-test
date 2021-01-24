@@ -6,25 +6,25 @@ import emptyHeart from "../../assets/favorite_.png";
 import "./Card.css";
 
 const Card = (props) => {
-  const [movies, setMovies] = useState(undefined);
+  const [movie, setMovie] = useState(undefined);
 
   useEffect(() => {
     console.log("card load");
-    console.log(props.movies);
-    setMovies(props.movies);
-  }, [props.movies]);
+    console.log(props.movie);
+    setMovie(props.movie);
+  }, [props.movie]);
 
   const executeOnClick = (isExpanded) => {
     console.log(isExpanded);
   };
 
-  if (!movies) return <div>loading</div>;
+  if (!movie) return <div>loading</div>;
   else {
     return (
       <div
         className={props.size === "small" ? "card card-small" : "card card-big"}
         style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/w500${movies.backdrop_path})`,
+          backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.backdrop_path})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "100% 100%",
         }}
@@ -50,7 +50,7 @@ const Card = (props) => {
                   : "card-title card-title-big"
               }
             >
-              {movies.original_title}
+              {movie.original_title}
             </div>
 
             <div
@@ -60,8 +60,8 @@ const Card = (props) => {
                   : "card-info card-info-big"
               }
             >
-              DATA DE LANÇAMENTO: {movies.release_date} • IDIOMA ORIGINAL:{" "}
-              {movies.original_language.toUpperCase()}
+              DATA DE LANÇAMENTO: {movie.release_date} • IDIOMA ORIGINAL:{" "}
+              {movie.original_language.toUpperCase()}
             </div>
           </div>
 
@@ -74,23 +74,23 @@ const Card = (props) => {
           >
             <div className="card-rating">
               <img
-                src={movies.vote_average > 1 ? filledHeart : emptyHeart}
+                src={movie.vote_average > 1 ? filledHeart : emptyHeart}
                 alt="Rating"
               />
               <img
-                src={movies.vote_average > 3 ? filledHeart : emptyHeart}
+                src={movie.vote_average > 3 ? filledHeart : emptyHeart}
                 alt="Rating"
               />
               <img
-                src={movies.vote_average > 5 ? filledHeart : emptyHeart}
+                src={movie.vote_average > 5 ? filledHeart : emptyHeart}
                 alt="Rating"
               />
               <img
-                src={movies.vote_average > 7 ? filledHeart : emptyHeart}
+                src={movie.vote_average > 7 ? filledHeart : emptyHeart}
                 alt="Rating"
               />
               <img
-                src={movies.vote_average > 9 ? filledHeart : emptyHeart}
+                src={movie.vote_average > 9 ? filledHeart : emptyHeart}
                 alt="Rating"
               />
             </div>
@@ -101,7 +101,7 @@ const Card = (props) => {
                   : "card-number-ratings card-number-ratings-big"
               }
             >
-              ({movies.vote_count} avaliações)
+              ({movie.vote_count} avaliações)
             </div>
           </div>
         </div>
@@ -120,7 +120,7 @@ const Card = (props) => {
             expanded={false}
             width={0}
           >
-            {movies.overview}
+            {movie.overview}
           </ShowMoreText>
         </div>
         <div className="layer"></div>
