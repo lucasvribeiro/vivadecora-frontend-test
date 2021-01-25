@@ -5,6 +5,7 @@ import MyModal from "../MyModal/MyModal";
 
 import filledHeart from "../../assets/favorite.png";
 import emptyHeart from "../../assets/favorite_.png";
+import loading from "../../assets/loading.gif";
 
 import "./Card.css";
 
@@ -21,7 +22,12 @@ const Card = (props) => {
     setMovie(props.movie);
   }, [props.movie]);
 
-  if (!movie) return <div>loading</div>;
+  if (!movie)
+    return (
+      <div>
+        <img style={{maxWidth: '80px'}} src={loading} alt="Loading..." />
+      </div>
+    );
   else {
     return (
       <div
@@ -69,8 +75,8 @@ const Card = (props) => {
               }
             >
               Ano de Lançamento:{" "}
-              {format(new Date(props.movie.release_date), "yyyy")} •
-              Idioma Original: {movie.original_language.toUpperCase()}
+              {format(new Date(props.movie.release_date), "yyyy")} • Idioma
+              Original: {movie.original_language.toUpperCase()}
             </div>
           </div>
 
