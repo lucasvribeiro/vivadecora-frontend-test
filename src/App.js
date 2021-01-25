@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
+
 import axios from "axios";
 
 import Home from "./pages/Home/Home";
@@ -10,6 +11,7 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
+  const location = useLocation();
   const [mobileNavbarState, setMobileNavbarState] = useState(false);
   const [moviesList, setMoviesList] = useState(undefined);
   const [likedMovies, setLikedMovies] = useState([]);
@@ -34,94 +36,84 @@ function App() {
   };
 
   const likeMovie = () => {
-    console.log("liked");
     setLikedMovies(likedMovies.concat(moviesList[0]));
-
     moviesList.shift();
-    console.log(moviesList);
   };
 
   const deslikeMovie = () => {
-    console.log("desliked");
     setDeslikedMovies(deslikedMovies.concat(moviesList[0]));
-
     moviesList.shift();
-    console.log(moviesList);
   };
 
   const skipMovie = () => {
-    console.log("skipped");
     setSkippedMovies(skippedMovies.concat(moviesList[0]));
-
     moviesList.shift();
-    console.log(moviesList);
   };
 
   return (
-    <Router>
-      <div
-        className="app"
-        style={
-          moviesList
-            ? {
-                backgroundImage: `url(https://image.tmdb.org/t/p/w500${moviesList[0].backdrop_path})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "100% 100%",
-              }
-            : null
-        }
-      >
-        <div className="layer-background"></div>
+    <div
+      className="app"
+      style={
+        moviesList &&
+        (location.pathname === "/" || location.pathname === "/home")
+          ? {
+              backgroundImage: `url(https://image.tmdb.org/t/p/w500${moviesList[0].backdrop_path})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "100% 100%",
+            }
+          : null
+      }
+    >
+      <div className="layer-background"></div>
 
-        <Navbar
-          type="mobile"
-          state={mobileNavbarState}
-          handleCloseNavbar={handleMobileNavbarState}
-        />
+      <Navbar
+        type="mobile"
+        state={mobileNavbarState}
+        handleCloseNavbar={handleMobileNavbarState}
+      />
 
-        <div className="body-content">
-          <Header onHamburguerMenuClicked={handleMobileNavbarState} />
-          <Navbar type="web" />
+      <div className="body-content">
+        <Header onHamburguerMenuClicked={handleMobileNavbarState} />
+        <Navbar type="web" />
 
-          <Switch>
-            <Route
-              path="/desliked-movies"
-              render={(props) => (
-                <MoviesList
-                  {...props}
-                  moviesList={deslikedMovies}
-                  title="FILMES NÃO CURTIDOS"
-                />
-              )}
-            />
+        <Switch>
+          <Route
+            path="/desliked-movies"
+            render={(props) => (
+              <MoviesList
+                {...props}
+                moviesList={deslikedMovies}
+                title="FILMES NÃO CURTIDOS"
+              />
+            )}
+          />
 
-            <Route
-              path="/liked-movies"
-              render={(props) => (
-                <MoviesList
-                  {...props}
-                  moviesList={likedMovies}
-                  title="FILMES CURTIDOS"
-                />
-              )}
-            />
+          <Route
+            path="/liked-movies"
+            render={(props) => (
+              <MoviesList
+                {...props}
+                moviesList={likedMovies}
+                title="FILMES CURTIDOS"
+              />
+            )}
+          />
 
-            <Route
-              path="/*"
-              render={(props) => (
-                <Home
-                  {...props}
-                  movie={moviesList ? moviesList[0] : undefined}
-                  sendLikeMovie={likeMovie}
-                  sendDeslikeMovie={deslikeMovie}
-                  sendSkipMovie={skipMovie}
-                />
-              )}
-            />
-          </Switch>
-        </div>
+          <Route
+            path="/*"
+            render={(props) => (
+              <Home
+                {...props}
+                movie={moviesList ? moviesList[0] : undefined}
+                sendLikeMovie={likeMovie}
+                sendDeslikeMovie={deslikeMovie}
+                sendSkipMovie={skipMovie}
+              />
+            )}
+          />
+        </Switch>
       </div>
-    </Router>
+    </div>
   );
 }
 

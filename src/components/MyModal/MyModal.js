@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+import { format } from "date-fns";
 
 import filledHeart from "../../assets/favorite.png";
 import emptyHeart from "../../assets/favorite_black.png";
@@ -37,10 +38,13 @@ const MyModal = (props) => {
           />
         </div>
         <div className="modal-movie-content">
-          <h2 className="modal-title">{props.movie.original_title}</h2>
+          <h2 className="modal-title">
+            {props.movie.original_title.toUpperCase()}
+          </h2>
           <p className="modal-other-info">
-            DATA DE LANÇAMENTO: {props.movie.release_date} • IDIOMA ORIGINAL:{" "}
-            {props.movie.original_language.toUpperCase()}
+            Ano de Lançamento:{" "}
+            {format(new Date(props.movie.release_date), "yyyy")} • Idioma
+            Original: {props.movie.original_language.toUpperCase()}
           </p>
           <div className="card-rating">
             <img

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import Card from "../../components/Card/Card";
 import Button from "../../components/Button/Button";
@@ -20,10 +20,6 @@ const Home = (props) => {
   const handleSkippedMovie = () => {
     props.sendSkipMovie();
   };
-
-  useEffect(() => {
-    console.log("rendered");
-  }, []);
 
   return (
     <div className="home">
@@ -53,7 +49,7 @@ const Home = (props) => {
           onButtonClick={handleLikedMovie}
           icon={like}
           text="CURTI"
-          color="#FF5656"
+          color="#ff5656"
           width="240px"
         />
       </div>

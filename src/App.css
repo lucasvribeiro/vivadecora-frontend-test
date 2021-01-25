@@ -1,9 +1,14 @@
+* {
+  font-family: 'Catamaran', sans-serif !important;
+}
+
 .app {
   display: flex;
   align-items: stretch;
   position: relative;
   height: fit-content;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .body-content {
@@ -11,12 +16,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-@media screen and (min-width: 500px) {
-  .app {
-    flex-direction: column;
-  }
 }
 
 .layer-background {
@@ -28,4 +27,10 @@
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+@media screen and (min-width: 321px) {
+  .app {
+    flex-direction: column;
+  }
 }

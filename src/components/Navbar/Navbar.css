@@ -3,7 +3,7 @@
 }
 
 .sections-mobile {
-  background-color: #333333;
+  background-color: #555555;
   height: 100vh;
   min-width: 75vw;
   z-index: 3;
@@ -28,7 +28,7 @@
   display: none;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 321px) {
   .sections-mobile {
     display: none !important;
   }

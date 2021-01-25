@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ShowMoreText from "react-show-more-text";
+import { format } from "date-fns";
 
 import MyModal from "../MyModal/MyModal";
 
@@ -15,12 +15,7 @@ const Card = (props) => {
 
   const changeModalState = () => {
     setModalIsOpen(!modalIsOpen);
-    console.log("chaged state");
   };
-
-  // const executeOnClick = (isExpanded) => {
-  //   console.log(isExpanded);
-  // };
 
   useEffect(() => {
     setMovie(props.movie);
@@ -63,7 +58,7 @@ const Card = (props) => {
                   : "card-title card-title-big"
               }
             >
-              {movie.original_title}
+              {movie.original_title.toUpperCase()}
             </div>
 
             <div
@@ -73,8 +68,9 @@ const Card = (props) => {
                   : "card-info card-info-big"
               }
             >
-              DATA DE LANÇAMENTO: {movie.release_date} • IDIOMA ORIGINAL:{" "}
-              {movie.original_language.toUpperCase()}
+              Ano de Lançamento:{" "}
+              {format(new Date(props.movie.release_date), "yyyy")} •
+              Idioma Original: {movie.original_language.toUpperCase()}
             </div>
           </div>
 
@@ -85,7 +81,13 @@ const Card = (props) => {
                 : "container-rating container-rating-big"
             }
           >
-            <div className="card-rating">
+            <div
+              className={
+                props.size === "small"
+                  ? "card-rating card-rating-small"
+                  : "card-rating card-rating-big"
+              }
+            >
               <img
                 src={movie.vote_average > 1 ? filledHeart : emptyHeart}
                 alt="Rating"
@@ -126,7 +128,7 @@ const Card = (props) => {
               : "card-sinopse card-sinopse-big"
           }
         >
-          <ShowMoreText
+          {/* <ShowMoreText
             lines={1}
             more="Ver mais..."
             onClick={changeModalState}
@@ -134,7 +136,11 @@ const Card = (props) => {
             width={0}
           >
             {movie.overview}
-          </ShowMoreText>
+          </ShowMoreText> */}
+          {movie.overview.substring(0, 80)}...{" "}
+          <button className="show-overview-button" onClick={changeModalState}>
+            Ver Sinopse
+          </button>
         </div>
         <div className="layer"></div>
       </div>

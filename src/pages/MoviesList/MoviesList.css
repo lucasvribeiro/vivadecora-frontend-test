@@ -16,7 +16,7 @@
   justify-content: space-evenly;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 321px) {
   .body-movies-list {
     width: calc(100vw - 400px);
     padding: 0 200px 100px 200px;
@@ -26,12 +26,15 @@
     grid-template-columns: repeat(3, auto) !important;
     grid-gap: 80px !important;
     justify-content: center;
-    /* margin: 60px 20px; */
   }
 
   .body-movies-list h2 {
     padding: 15px 0;
     font-size: 2rem;
+  }
+
+  .empty-container img {
+    max-width: 360px !important;
   }
 }
 
@@ -45,5 +48,5 @@
 }
 
 .empty-container img {
-  /* width: 50%; */
+  max-width: 180px;
 }

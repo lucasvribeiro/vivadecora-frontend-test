@@ -22,7 +22,9 @@ const Header = (props) => {
       </div>
 
       <div className="logo-container">
-        <img src={vivaDecoraLogo} alt="Toggle" />
+        <a href="/">
+          <img src={vivaDecoraLogo} alt="Toggle" />
+        </a>
       </div>
     </div>
   );
