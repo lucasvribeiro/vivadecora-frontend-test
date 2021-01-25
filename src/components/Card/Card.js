@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ShowMoreText from "react-show-more-text";
+
+import MyModal from "../MyModal/MyModal";
+
 import filledHeart from "../../assets/favorite.png";
 import emptyHeart from "../../assets/favorite_.png";
 
@@ -8,15 +11,20 @@ import "./Card.css";
 const Card = (props) => {
   const [movie, setMovie] = useState(undefined);
 
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const changeModalState = () => {
+    setModalIsOpen(!modalIsOpen);
+    console.log("chaged state");
+  };
+
+  // const executeOnClick = (isExpanded) => {
+  //   console.log(isExpanded);
+  // };
+
   useEffect(() => {
-    console.log("card load");
-    console.log(props.movie);
     setMovie(props.movie);
   }, [props.movie]);
-
-  const executeOnClick = (isExpanded) => {
-    console.log(isExpanded);
-  };
 
   if (!movie) return <div>loading</div>;
   else {
@@ -29,6 +37,11 @@ const Card = (props) => {
           backgroundSize: "100% 100%",
         }}
       >
+        <MyModal
+          isOpen={modalIsOpen}
+          changeModalState={changeModalState}
+          movie={movie}
+        />
         <div
           className={
             props.size === "small"
@@ -116,7 +129,7 @@ const Card = (props) => {
           <ShowMoreText
             lines={1}
             more="Ver mais..."
-            onClick={executeOnClick}
+            onClick={changeModalState}
             expanded={false}
             width={0}
           >
