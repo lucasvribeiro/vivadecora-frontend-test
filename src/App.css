@@ -8,7 +8,6 @@
   position: relative;
   height: fit-content;
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 .body-content {
@@ -29,7 +28,7 @@
   height: 100%;
 }
 
-@media screen and (min-width: 501px) {
+@media screen and (min-width: 321px) {
   .app {
     flex-direction: column;
   }

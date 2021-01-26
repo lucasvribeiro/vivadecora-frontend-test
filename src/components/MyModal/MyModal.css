@@ -57,12 +57,13 @@
 .modal-title {
   color: #555555;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .modal-overview {
   color: #555555 !important;
   font-size: 1rem !important;
-  padding: 0 60px 20px 60px;
+  padding: 0 60px 60px 60px;
 }
 
 .Modal {
@@ -71,9 +72,10 @@
   left: 25vw;
   right: 25vw;
   bottom: 12vh;
+  height: fit-content;
   border: none;
   background-color: #fff;
-  overflow: hidden;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   border-radius: 15px;
   outline: none;
@@ -90,7 +92,7 @@
   background-color: rgba(75, 75, 75, 0.7);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 320px) {
   .Modal {
     top: 2vh;
     left: 5vw;
@@ -99,7 +101,12 @@
   }
 
   .modal-overview {
-    padding: 0 30px 20px 30px;
+    padding: 0 30px 40px 30px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .modal-other-info {
+    padding: 0 30px;
   }
 
   .close-modal-button {

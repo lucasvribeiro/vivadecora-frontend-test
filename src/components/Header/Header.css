@@ -28,7 +28,7 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 501px) {
+@media screen and (min-width: 321px) {
   .hamburguer-menu {
     display: none;
   }
