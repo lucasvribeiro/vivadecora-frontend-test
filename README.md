@@ -1,5 +1,7 @@
 # Olá! Seja Bem-Vindo ao VivaDeMovie :movie_camera:
 
+<img width="600" src="https://github.com/lucasvribeiro/vivadecora-frontend-test/blob/master/src/assets/home-screen.png?raw=true">
+
 Este projeto trata-se de uma aplicação web responsiva para Curadoria de Filmes. A ideia surgiu a partir da seguinte situação:
 
 Depois do trabalho alguns amigos quiseram assistir um filme juntos. O problema apareceu logo: *"Que filme vamos assistir?"*. Cada um parecia ter seu próprio gosto para filmes e estava difícil decidir.
