@@ -90,7 +90,7 @@
   background-color: rgba(75, 75, 75, 0.7);
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 500px) {
   .Modal {
     top: 2vh;
     left: 5vw;

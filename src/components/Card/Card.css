@@ -108,7 +108,7 @@
   max-width: 20px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 500px) {
   .card-big {
     width: calc(294px - 40px) !important;
     height: calc(350px - 40px) !important;
