@@ -13,6 +13,7 @@ O Bruno respondeu:
 > *Acho que vale a pena. Deveríamos fazer um MVP desse app só com funcionalidades básicas e ver se nos ajuda.*
 
 Todos acharam uma boa ideia. Sendo assim, eu, **Lucas Vinicius Ribeiro**, decidi dar vida ao MVP em questão :smile:
+
 Abaixo, seguem as instruções para que você possa executar o VivaDeMovie na sua máquina e fazer suas próprias melhorias e adaptações, caso queira!
 
 ## Instruções para executar o projeto
@@ -31,6 +32,9 @@ Abaixo, seguem as instruções para que você possa executar o VivaDeMovie na su
 5. Por fim, execute o comando `npm start` para iniciar o projeto e Seja Feliz! :smile:
 
 Desenvolvido com :heart: por Lucas Vinicius Ribeiro.
+
 Em caso de dúvidas, entre em contato comigo!
+
 :e-mail: lucasvribeiro14@gmail.com
+
 :e-mail: contato@lucasribeiro.dev
