@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Olá! Seja Bem-Vindo ao VivaDeMovie :movie_camera:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto trata-se de uma aplicação web responsiva para Curadoria de Filmes. A ideia surgiu a partir da seguinte situação:
 
-## Available Scripts
+Depois do trabalho alguns amigos quiseram assistir um filme juntos. O problema apareceu logo: *"Que filme vamos assistir?"*. Cada um parecia ter seu próprio gosto para filmes e estava difícil decidir.
 
-In the project directory, you can run:
+Para resolver isso, Vanessa deu a ideia: 
 
-### `npm start`
+> *Vamos fazer um app online com uma lista de filmes onde todos poderão dizer quais filmes acham bons ou ruins. O que acham?*
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O Bruno respondeu:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> *Acho que vale a pena. Deveríamos fazer um MVP desse app só com funcionalidades básicas e ver se nos ajuda.*
 
-### `npm test`
+Todos acharam uma boa ideia. Sendo assim, eu, **Lucas Vinicius Ribeiro**, decidi dar vida ao MVP em questão :smile:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Abaixo, seguem as instruções para que você possa executar o VivaDeMovie na sua máquina e fazer suas próprias melhorias e adaptações, caso queira!
 
-### `npm run build`
+## Instruções para executar o projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Pré-requisitos
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Você precisa ter instalado o [npm](https://www.npmjs.com/) 6.14.4+ e o [NodeJS](https://nodejs.org/en/) v12.16.2+.
+2. Caso ainda não possua, criem uma conta no [TheMovieDb](https://www.themoviedb.org/) e gere uma API_KEY através do Menu > Configurações > API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Guia de instalação e configuração do projeto
 
-### `npm run eject`
+1. Faça um clone do projeto em sua máquina utilizando `git clone https://github.com/lucasvribeiro/vivadecora-frontend-test.git`.
+2. Dentro do diretório do projeto, execute o comando `npm i` ou `npm install` para instalar as dependências do projeto.
+3. Crie um arquivo com o nome `.env` na raiz do projeto.
+4. Dentro do arquivo `.env` insira o código `REACT_APP_MOVIE_DB_API_KEY = 'SUA_API_KEY_AQUI'`.
+5. Por fim, execute o comando `npm start` para iniciar o projeto e Seja Feliz! :smile:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Desenvolvido com :heart: por Lucas Vinicius Ribeiro.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Em caso de dúvidas, entre em contato comigo!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+:e-mail: lucasvribeiro14@gmail.com
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+:e-mail: contato@lucasribeiro.dev
