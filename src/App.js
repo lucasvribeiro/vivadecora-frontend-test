@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     axios
       .get(
-        "https://api.themoviedb.org/4/list/1?api_key=bc34944b565b8fb060d355016adeef9b"
+        `https://api.themoviedb.org/4/list/1?api_key=${process.env.REACT_APP_MOVIE_DB_API_KEY}`
       )
       .then((res) => {
         setMoviesList(res.data.results);
