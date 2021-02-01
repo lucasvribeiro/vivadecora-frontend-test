@@ -33,7 +33,7 @@ Abaixo, seguem as instruções para que você possa executar o VivaDeMovie na su
 4. Dentro do arquivo `.env` insira o código `REACT_APP_MOVIE_DB_API_KEY = 'SUA_API_KEY_AQUI'`.
 5. Por fim, execute o comando `npm start` para iniciar o projeto e Seja Feliz! :smile:
 
-Desenvolvido com :heart: por Lucas Vinicius Ribeiro.
+Desenvolvido com :blue_heart: por Lucas Vinicius Ribeiro.
 
 Em caso de dúvidas, entre em contato comigo!
 
